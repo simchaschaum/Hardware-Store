@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Josefin+Slab&display=swap');
+
+:root{
+  --clr-pri: #AA3939;
+  --clr-sec: #669999;
+  --f-pri: 'Fredericka the Great', cursive;
+  --f-sec:'Josefin Slab', serif;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body{
+  font-family: var(--f-pri);
+}
+@media only screen and (max-width: 700px){
+  body{
+    font-size: 12px;
+  }
+}
+
+img{
+  width: 400px;
+}
+
+/* Header Styling */
+header{
+  height: 100px;
+  background-color: var(--clr-pri);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+header h4{
+  font-size: 3em;
+}
+header h6{
+  font-size: 1.25em;
+}
+.star{
+  position: absolute;
+  right: 165px;
+  top: 50px;
+  z-index: 7;
+
+  height: 100px;
+  width: 100px;
+  background-color: #55AA55;
+}
+@media only screen and (max-width:990px){
+  .star{
+    display: none;
+  }
+}
+.star:before{
+  content: "";
+  position: absolute;
+  z-index: 8;
+
+  height: 100px;
+  width: 100px;
+  background-color: #55AA55;
+
+  -moz-transform: rotate(-30deg);
+   -webkit-transform: rotate(-30deg);
+   -ms-transform: rotate(-30deg);
+   -o-transform: rotate(-30deg);
+   transform: rotate(-30deg);
+}
+.star:after{
+  content: "Check Out Our Great Deals!";
+  font-family: var(--f-sec);
+  font-size: 1.15em;
+  position: absolute;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  background-color: #55AA55;
+
+  -moz-transform: rotate(30deg);
+   -webkit-transform: rotate(30deg);
+   -ms-transform: rotate(30deg);
+   -o-transform: rotate(30deg);
+   transform: rotate(30deg);
+}
+/* Navbar Styling */
+nav{
+  background-color: var(--clr-sec) !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky !important;
+  top: 0;
+  z-index: 3; //this is to hide the arrows from the carousel
+}
+nav ul{
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  margin-bottom: 0;
+}
+ul.nav-right{
+  justify-content: flex-end;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav-link{
+  color: white !important;
+}
+nav a:hover{
+  color: white
+}
+.navbar-toggler{
+  z-index: 4;
+}
+
+/* Carousel Styling */
+.carousel{
+  margin-bottom: 2em;
+}
+.carousel-item img{
+  height: 400px;
+  object-position: 50% 25%;
+  object-fit: cover;
+
+}
+.carousel-control-prev-icon{
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNTEycHgiIGlkPSJMYXllcl8xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMnB4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cG9seWdvbiBwb2ludHM9IjM1MiwxMjguNCAzMTkuNyw5NiAxNjAsMjU2IDE2MCwyNTYgMTYwLDI1NiAzMTkuNyw0MTYgMzUyLDM4My42IDIyNC43LDI1NiAiLz48L3N2Zz4=);
+}
+.carousel-control-next-icon{
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iNTEycHgiIGlkPSJMYXllcl8xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMnB4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48cG9seWdvbiBwb2ludHM9IjE2MCwxMjguNCAxOTIuMyw5NiAzNTIsMjU2IDM1MiwyNTYgMzUyLDI1NiAxOTIuMyw0MTYgMTYwLDM4My42IDI4Ny4zLDI1NiAiLz48L3N2Zz4=)
+}
+.carousel-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+  padding-right: 100px;
+  color: var(--clr-pri);
+  font-family: var(--f-sec);
+}
+.carousel-text h4{
+  font-size: 3em;
+}
+.carousel-text p{
+  font-size: 1.5em;
+}
+@media only screen and (max-width:900px){
+  .carousel-text h4{
+    font-size: 2em;
+  }
+  .carousel-text p{
+    font-size: 1em;
+  }
+}
+.carousel-text button{
+  border: 2px outset var(--clr-pri);
+  background-color: white;
+  font-size: 2em;
+  padding: .25em;
+  cursor: pointer;
+}
+
+/* Features Styling */
+.small-margin{
+  margin: 5px 1em;
+}
+.features{
+  width: 90%;
+  margin: 1em auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media only screen and (max-width: 900px){
+  .features{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 700px){
+  .features{
+    grid-template-columns: 1fr;
+  }
+}
+.features div{
+  margin: 1em;
+  padding: 0.5em;
+  height: 300px;
+  box-shadow: 0 0 2.5px var(--clr-pri);
+  font-family: var(--f-sec);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.features img{
+  object-fit: cover;
+  width: 90%;
+  height: 60%;
+}
+.features p{
+  font-size: 1em;
+}
+/* Category Stying */
+.categories{
+  margin-bottom: 150px;
+}
+.category-container{
+  margin: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+
+  font-family: var(--f-sec);
+  font-size: 1.25em;
+}
+.category-container img{
+  width: 64px;
+  height: 64px;
+}
+.category-container a{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  text-decoration: none;
+  color: var(--clr-pri);
+  box-shadow: 0 0 2.5px var(--clr-pri);
+}
+.category-container a:hover{
+  box-shadow: 0 0 5px var(--clr-pri);
+}
+.category-container p{
+  margin-left: 10px;
+}
+
+/* Footer styling */
+footer{
+  height: 100px;
+  background-color: var(--clr-pri);
+  font-family: var(--f-sec);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer div{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (max-width:900px){
+  footer div{
+    flex-direction: column;
+  }
+}
+
+footer a,
+footer a:hover{
+  text-decoration: none;
+}
+footer p,
+footer a{
+  margin-bottom: 0;
+  color: white;
+}
